@@ -3,7 +3,7 @@
 ![Provenance](https://img.shields.io/badge/SHA256-Provenance%20Ledger-purple)
 
 # 🌌 Aether Spatial Studio (NEXA Engine)
-> **Production-Grade Generative Spatial Compute & Provenance Engine**
+> **Production-Grade Generative Spatial Compute & Provenance Engine**  
 > *Built for the Backblaze Generative AI Media Hackathon (2026)*
 
 ---
@@ -28,6 +28,7 @@ Unlike standard generative AI wrappers that handle flat 2D media or stateless AP
 
 ## 🏗️ System Architecture
 
+```text
                              +-----------------------+
                              |  Spatial Prompt / UI  |
                              +-----------+-----------+
@@ -42,7 +43,7 @@ Unlike standard generative AI wrappers that handle flat 2D media or stateless AP
                   |                                             |
                   v                                             v
    +------------------------------+             +-------------------------------+
-   |    WebGL Viewport Engine     |             |   Backblaze B2 Spatial Vault  |
+   |     WebGL Viewport Engine    |             |   Backblaze B2 Spatial Vault  |
    |  (Dynamic Geometry & PBR)    |             |  (SHA-256 Provenance & JSON)  |
    +------------------------------+             +-------------------------------+
                   |                                             |
@@ -53,44 +54,41 @@ Unlike standard generative AI wrappers that handle flat 2D media or stateless AP
                            | Spatial Lineage DAG Tree  |
                            |    (Commit & Rollback)    |
                            +---------------------------+
+🚀 Getting Started
+Prerequisites
+Node.js: v18.x or higher
 
----
+Package Manager: npm, pnpm, or yarn
 
-## 🚀 Getting Started
+Backblaze B2 Account Credentials: Application Key ID & Application Key
 
-### Prerequisites
+Installation
+1. Clone the Repository:
 
-- **Node.js**: `v18.x` or higher
-- **Package Manager**: `npm`, `pnpm`, or `yarn`
-- **Backblaze B2 Account Credentials** (Application Key ID & Application Key)
-
-### Installation
-
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/your-username/aether-spatial-studio.git](https://github.com/your-username/aether-spatial-studio.git)
-   cd aether-spatial-studio
-Install Dependencies:
+Bash
+git clone [https://github.com/d7755911-prog/aether-nexus-engine.git](https://github.com/d7755911-prog/aether-nexus-engine.git)
+cd aether-nexus-engine
+2. Install Dependencies:
 
 Bash
 npm install
-Set Up Environment Variables:
+3. Set Up Environment Variables:
 Create a .env.local file in the root directory:
 
 Code snippet
 NEXT_PUBLIC_B2_KEY_ID=your_backblaze_key_id
 NEXT_PUBLIC_B2_APPLICATION_KEY=your_backblaze_application_key
 NEXT_PUBLIC_B2_BUCKET_NAME=your_spatial_vault_bucket
-Run the Development Server:
+4. Run the Development Server:
 
 Bash
 npm run dev
 Open http://localhost:3000 in your browser to view the application.
 
 🔒 Backblaze B2 & Genblaze Integration Highlights
-B2 Storage & Provenance: The application logs asset state manifests (provenance_manifest.json) containing timestamp, commit SHA, texture URLs, and telemetry metrics directly to Backblaze B2 Cloud Object Storage.
+B2 Storage & Provenance: The application logs asset state manifests (provenance_manifest.json) containing timestamps, commit SHAs, texture URLs, and telemetry metrics directly to Backblaze B2 Cloud Object Storage. This guarantees immutable provenance for every generative 3D asset.
 
-Genblaze Workflow: Utilizes the Genblaze Python/Node orchestration patterns to handle generative model fallback logic and active node synthesis.
+Genblaze Workflow: Utilizes the Genblaze orchestration patterns to handle generative model fallback logic, latency tracking, and active spatial node synthesis seamlessly within the UI.
 
 🛠️ Tech Stack
 Frontend Framework: Next.js (App Router), TypeScript, Tailwind CSS
